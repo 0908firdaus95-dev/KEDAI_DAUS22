@@ -1,6 +1,7 @@
-const CACHE_NAME = "kedai-daus22-v4-1";
+const CACHE_NAME = "kedai-daus22-v4-2";
 const ASSETS = [
   "./", "./index.html", "./style.css", "./app.js", "./manifest.json",
+  "./tracking.html", "./tracking.css", "./tracking.js",
   "./assets/sounds/tap-menu.wav",
   "./assets/sounds/order-created.wav",
   "./assets/sounds/status-update.wav"

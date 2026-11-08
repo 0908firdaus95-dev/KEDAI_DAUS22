@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c28"><meta name="description" content="Pelacakan antrean KEDAI DAUS 22">
+  <title>Lacak Pesanan - KEDAI DAUS 22</title>
+  <link rel="stylesheet" href="tracking.css">
+  <script src="tracking.js" defer></script>
+</head>
+<body>
+  <main class="track-shell">
+    <header class="track-brand"><span class="brand-mark">D<span>22</span></span><div><strong>KEDAI DAUS 22</strong><small>Pelacakan pesanan pelanggan</small></div></header>
+    <section class="track-hero">
+      <span class="eyebrow">HALAMAN KHUSUS PEMBELI</span>
+      <h1>Perjalanan pesananmu</h1>
+      <p>Pindai barcode antrean untuk melihat rincian pesanan dan perkembangan dari kedai.</p>
+    </section>
+    <section class="track-panel">
+      <div class="track-topline"><div><span class="eyebrow">NOMOR ANTREAN</span><div class="queue-number" id="queueNumber">D---</div></div><div class="live-badge"><i></i><span id="refreshLabel">Memuat status</span></div></div>
+      <div class="buyer-meta"><span id="buyerName">Nama pemesan</span><span id="orderTime">Waktu pesanan</span></div>
+      <div id="syncNotice" class="sync-notice hidden">Halaman ini dibuka dari salinan data barcode. Agar perubahan proses dari perangkat Owner/Kasir tampil secara langsung di HP ini, aplikasi perlu dihubungkan ke database online.</div>
+      <div id="cancelNotice" class="cancel-notice hidden">Pesanan ini telah dibatalkan oleh pihak kedai.</div>
+      <div class="section-title"><h2>Rincian pesanan</h2><span id="itemCount">0 item</span></div>
+      <div id="orderItems" class="order-items"><div class="loading">Memuat rincian pesanan…</div></div>
+      <div class="bill-total"><span>Total yang harus dibayar</span><strong id="orderTotal">Rp0</strong></div>
+      <div class="payment-info"><span>Metode pembayaran</span><b id="paymentMethod">Menunggu kasir</b><span>Status pembayaran</span><b id="paymentStatus">Belum dibayar</b></div>
+      <div class="section-title process-title"><h2>Proses pesanan</h2><span class="staff-update">Diperbarui oleh kedai</span></div>
+      <div id="processList" class="process-list"></div>
+      <div id="currentStatus" class="current-status">Menunggu data pesanan…</div>
+      <div id="paymentWaitNotice" class="payment-wait-notice hidden">Pesanan sudah siap diambil. Silakan selesaikan pembayaran di kasir. Konfirmasi pembeli akan muncul setelah kasir/Owner mencatat pembayaran sebagai <b>Lunas</b>.</div>
+      <div id="customerConfirmArea" class="customer-confirm-area hidden">
+        <div class="confirm-icon">✓</div><div><strong>Pesanan siap diambil</strong><p>Setelah menerima pesanan dan menyelesaikan pembayaran, tekan tombol konfirmasi di bawah.</p></div>
+        <button id="confirmReceivedBtn" class="confirm-btn">Saya sudah mengambil pesanan & sudah membayar</button>
+      </div>
+      <div id="confirmedNotice" class="confirmed-notice hidden"><strong>✓ Konfirmasi akhir berhasil dicatat</strong><p>Terima kasih. Pesanan ditandai sudah diambil dan dibayar menurut konfirmasi Anda.</p></div>
+      <div class="track-footer"><span>Halaman ini khusus untuk pemantauan pembeli.</span><button id="refreshBtn" type="button">↻ Perbarui status</button></div><a class="back-link" href="index.html">← Kembali ke halaman menu</a>
+    </section>
+    <footer>© KEDAI DAUS 22 · Simpan barcode sampai pesanan diterima.</footer>
+  </main>
+  <div id="trackToast" class="track-toast"></div>
+</body>
+</html>

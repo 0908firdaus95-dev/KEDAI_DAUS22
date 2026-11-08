@@ -36,3 +36,19 @@ UPDATE V4.1 - NAVIGASI PEMBELI/PENJUAL
 - Sidebar gelap baru terlihat setelah Owner atau Kasir berhasil login.
 - Setelah logout, sidebar disembunyikan kembali dan aplikasi kembali ke halaman pembeli.
 - Kunci localStorage kd22_menu dan kd22_orders tidak diubah, sehingga data lokal yang tersimpan tetap menggunakan struktur yang sama.
+
+
+UPDATE V4.2 - HALAMAN PELACAKAN & KONFIRMASI PEMBELI
+
+1. QR antrean sekarang mengarah ke tracking.html, halaman terpisah khusus pembeli.
+2. tracking.html menampilkan nomor antrean, nama, rincian item, jumlah, total tagihan, metode/status pembayaran, dan tahapan pesanan.
+3. Tombol "Saya sudah mengambil pesanan & sudah membayar" muncul setelah status pesanan Siap diambil. Konfirmasi akhir tersimpan sebagai customerConfirmed dan terlihat di panel penjual jika browser berbagi localStorage.
+4. Panel penjual menampilkan indikator menunggu konfirmasi / sudah dikonfirmasi pembeli. Laporan Excel Owner juga memuat kolom konfirmasi pembeli.
+5. Screen saver otomatis tampil setelah 2 menit tanpa aktivitas. Gerakan mouse, sentuhan, klik, scroll, atau keyboard menutupnya dan mengulang hitung 2 menit.
+6. QR menyertakan snapshot informasi pesanan agar halaman pelacakan dapat menampilkan rincian awal saat dibuka di HP lain. Namun snapshot itu tidak dapat menerima perubahan status dari laptop Owner secara live.
+7. PENTING: Aplikasi V4.2 masih menggunakan localStorage. Perubahan status, pembayaran, dan konfirmasi dari perangkat berbeda TIDAK akan tersinkron. Agar QR benar-benar live dan konfirmasi pembeli masuk ke Owner lintas HP, sambungkan sistem ke database online seperti Firebase/Firestore dan amankan akses melalui autentikasi serta rules.
+8. Deploy ulang seluruh isi folder termasuk tracking.html, tracking.css, dan tracking.js. Jangan menghapus localStorage lama.
+
+
+ATURAN KONFIRMASI PEMBELI
+Tombol konfirmasi akhir baru aktif setelah dua kondisi terpenuhi: status proses "Siap diambil" dan status pembayaran di panel penjual adalah "Lunas". Pembeli lalu mengonfirmasi bahwa pesanan telah diterima dan dibayar. Konfirmasi pelanggan tidak menggantikan pencatatan pembayaran oleh kasir/Owner.

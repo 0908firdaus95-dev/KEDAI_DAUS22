@@ -56,3 +56,9 @@ body.seller-mode .buyer-brandbar{display:none}
 }
 @media(max-width:480px){.buyer-promise{display:none}.buyer-brandbar{padding-top:15px}.footer-right{font-size:9px}}
 @media(min-width:761px){body.seller-mode.sidebar-collapsed .app-shell{margin-left:98px!important}}
+
+/* V4.2: status konfirmasi akhir dari pembeli */
+.customer-confirmation{display:block;margin-top:7px;font-size:9px;line-height:1.45;color:#dfb58e}
+.customer-confirmation.confirmed{color:#8fe0b6;font-weight:800}
+.confirmed-pill{background:#1e593f!important;color:#d6f8e6!important}
+.waiting-pill{background:#59452d!important;color:#f6d4a8!important}
