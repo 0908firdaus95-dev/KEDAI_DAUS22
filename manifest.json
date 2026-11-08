@@ -1,0 +1,10 @@
+{
+  "name": "KEDAI DAUS 22 - V3",
+  "short_name": "DAUS 22",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#172b3b",
+  "theme_color": "#172b3b",
+  "description": "Pemesanan dan manajemen kedai KEDAI DAUS 22",
+  "icons": []
+}

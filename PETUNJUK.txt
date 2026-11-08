@@ -1,0 +1,38 @@
+KEDAI DAUS 22 — UPDATE V4
+
+ISI PAKET
+- index.html, style.css, app.js, sw.js, manifest.json: aplikasi website/PWA.
+- assets/images/products/: tempat foto menu. Pakai nama file sesuai contoh PETUNJUK_GAMBAR.txt atau ubah properti image di DEFAULT_MENU pada app.js.
+- assets/sounds/: efek suara klik, pesanan baru, dan pembaruan status.
+- backup/KEDAI_DAUS_22_Template_Backup_Penjualan.xlsx: template workbook untuk pemantauan/backup manual.
+
+FITUR V4
+1. Sidebar navigasi di sisi kiri pada layar desktop; pada HP berubah menjadi navigasi ringkas di bagian atas.
+2. Tema gelap navy dengan aksen coklat yang lebih tegas.
+3. Owner dapat menambah, mengedit, menonaktifkan, mengaktifkan, dan menghapus menu. Riwayat item di pesanan lama tetap disimpan.
+4. Owner dapat membatalkan pesanan dengan alasan. Pesanan batal tidak dihapus dan tidak dihitung ke omzet/rekap penjualan aktif.
+5. Nomor antrean otomatis D001, D002, dst. dihitung berdasarkan tanggal Asia/Jakarta. Pada hari berikutnya dimulai lagi dari D001 tanpa menghapus riwayat hari sebelumnya. Pesanan yang dibatalkan tetap memakan nomor antrean agar nomor tidak dipakai ulang pada hari yang sama.
+6. Dashboard penjual menampilkan angka penjualan hari ini dan bulan berjalan.
+7. Owner mendapat tombol Unduh Excel. File ekspor mencakup sheet Penjualan, Detail Item, Produk, Rekap Harian, dan Rekap Bulanan.
+
+AKUN DEMO
+- Owner: pilih Owner, PIN 2200.
+- Kasir: pilih Kasir, PIN 2201.
+
+PENTING
+- Versi ini mempertahankan kunci localStorage V3 (kd22_menu dan kd22_orders), jadi data yang ada di browser yang sama tetap terbaca. Tetap buat backup sebelum deploy/penggantian file.
+- Spreadsheet template adalah file terpisah, tidak tersambung otomatis ke aplikasi. Untuk menyalin data, gunakan Unduh Excel dari akun Owner dan simpan setiap backup dengan nama/tanggal berbeda.
+- Data aplikasi saat ini masih tersimpan di localStorage browser. Antar perangkat tidak tersinkron otomatis. Dibutuhkan backend/database online (misalnya Firebase) untuk sinkronisasi lintas HP/laptop.
+- PIN di JavaScript hanya pengunci antarmuka demo, bukan keamanan produksi. Untuk penggunaan nyata, Owner/Kasir harus diautentikasi di server dan hak akses divalidasi melalui backend/security rules.
+- Metode Cash, QRIS, dan E-commerce/Transfer adalah pencatatan cara pembayaran. Belum ada pemrosesan uang atau QRIS gateway otomatis.
+- Ekspor Excel di aplikasi membutuhkan koneksi internet untuk memuat library SheetJS dari CDN.
+- Untuk service worker dan mode PWA, jalankan melalui HTTPS hosting atau localhost.
+
+
+UPDATE V4.1 - NAVIGASI PEMBELI/PENJUAL
+- Halaman pembeli tidak lagi menampilkan sidebar/dashboard navigasi penjual.
+- Pembeli hanya melihat identitas KEDAI DAUS 22, katalog menu, keranjang, barcode, dan halaman pelacakan pesanan.
+- Akses penjual tersedia melalui tautan kecil 'Akses penjual' pada bagian bawah halaman pembeli. Tautan ini hanya membuka layar login, bukan dashboard.
+- Sidebar gelap baru terlihat setelah Owner atau Kasir berhasil login.
+- Setelah logout, sidebar disembunyikan kembali dan aplikasi kembali ke halaman pembeli.
+- Kunci localStorage kd22_menu dan kd22_orders tidak diubah, sehingga data lokal yang tersimpan tetap menggunakan struktur yang sama.
